@@ -1,0 +1,7 @@
+---
+packages:
+  - libvirt
+  - qemu
+  - dnsmasq
+  - ebtables
+  - nfs-utils

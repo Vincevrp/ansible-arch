@@ -1,0 +1,21 @@
+---
+- name: Install libvirt packages
+  pacman:
+    name: '{{ packages }}'
+    state: latest
+
+- name: "Add user {{ username }} to libvirt group"
+  user:
+    name: '{{ username }}'
+    groups: libvirt
+    append: true
+
+- name: Copy libvirt polkit rules
+  copy:
+    src: 50-libvirt.rules
+    dest: /etc/polkit-1/rules.d/50-libvirt.rules
+
+- name: Copy nfs configuration
+  copy:
+    src: nfs.conf
+    dest: /etc/nfs.conf
