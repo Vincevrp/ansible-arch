@@ -1,0 +1,6 @@
+---
+all:
+  hosts:
+    desktop:
+      ansible_connection: local
+      ansible_become: true

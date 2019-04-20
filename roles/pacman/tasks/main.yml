@@ -1,0 +1,34 @@
+---
+- name: Install pacman dependencies
+  pacman:
+    name: "{{ packages }}"
+    state: latest
+
+- name: Copy pacman.conf
+  copy:
+    src: pacman.conf
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Set MAKEFLAGS in makepkg.conf
+  replace:
+    path: /etc/makepkg.conf
+    regexp: "MAKEFLAGS=.*"
+    replace: 'MAKEFLAGS="-j$(nproc)"'
+
+- name: Copy custom mirrorlist
+  copy:
+    src: mirrorlist
+    dest: /etc/pacman.d/mirrorlist.custom
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Update and sort mirrors with reflector
+  command: >
+    reflector -c BE -c DE -c NL -c FR -c GB -c CH
+              -a 12 -f 25 -p https --sort rate
+              --save /etc/pacman.d/mirrorlist
+  when: update_mirrors
