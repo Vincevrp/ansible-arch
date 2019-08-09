@@ -13,5 +13,12 @@ packages_lsp:
 packages_lint:
   - yamllint
 
+aur_packages:
+  - vim-plug
+
 aur_lsp:
   - terraform-lsp
+
+npm_packages:
+  - jshint
+  - sass-lint

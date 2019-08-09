@@ -9,24 +9,26 @@
     name: "{{ packages_bloat }}"
     state: absent
 
+- name: Install packages (aur)
+  aur:
+    name: "{{ aur_packages }}"
+    skip_installed: true
+
 - name: Install vim LSP (pacman)
   pacman:
     name: "{{ packages_lsp }}"
     state: latest
 
-- name: Install vim LSP (aur)
-  aur:
-    name: "{{ packages_lsp }}"
-    skip_installed: true
-
-- name: Install linters
+- name: Install linters (pacman)
   pacman:
     name: "{{ packages_lint }}"
     state: latest
 
 - name: Install linters (npm)
   npm:
-    name: coffee-script
+    name: "{{ item }}"
     global: true
     state: latest
-  become: false
+  become: true
+  become_user: "{{ username }}"
+  loop: "{{ npm_packages }}"
