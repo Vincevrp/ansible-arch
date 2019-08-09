@@ -2,6 +2,11 @@
 
 General configuration of my Arch Linux installation automated using Ansible.
 
+## Dependencies
+
+- `ansible-aur-git` - *Ansible module to install AUR packages*
+- `yay` - *AUR helper*
+
 ## Running
 
 ```

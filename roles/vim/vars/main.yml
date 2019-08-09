@@ -1,0 +1,17 @@
+---
+packages:
+  - vim
+
+packages_bloat:
+  - vi
+  - nano
+  - emacs
+
+packages_lsp:
+  - bash-language-server
+
+packages_lint:
+  - yamllint
+
+aur_lsp:
+  - terraform-lsp

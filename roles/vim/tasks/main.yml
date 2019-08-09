@@ -1,0 +1,32 @@
+---
+- name: Install vim
+  pacman:
+    name: "{{ packages }}"
+    state: latest
+
+- name: Remove unnecessary text editors
+  pacman:
+    name: "{{ packages_bloat }}"
+    state: absent
+
+- name: Install vim LSP (pacman)
+  pacman:
+    name: "{{ packages_lsp }}"
+    state: latest
+
+- name: Install vim LSP (aur)
+  aur:
+    name: "{{ packages_lsp }}"
+    skip_installed: true
+
+- name: Install linters
+  pacman:
+    name: "{{ packages_lint }}"
+    state: latest
+
+- name: Install linters (npm)
+  npm:
+    name: coffee-script
+    global: true
+    state: latest
+  become: false
