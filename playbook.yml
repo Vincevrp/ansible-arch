@@ -4,5 +4,6 @@
   become: true
   roles:
     - base
-    - libvirt
+    - i3
     - vim
+    - libvirt
