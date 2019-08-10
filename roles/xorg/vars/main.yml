@@ -12,3 +12,4 @@ packages:
   - xorg-xrandr
   - xorg-xset
   - xorg-xwininfo
+  - xclip
