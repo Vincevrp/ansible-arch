@@ -12,6 +12,7 @@ packages_lsp:
 
 packages_lint:
   - yamllint
+  - vint
 
 aur_packages:
   - vim-plug
