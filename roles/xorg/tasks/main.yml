@@ -1,0 +1,10 @@
+---
+- name: Install xorg packages
+  pacman:
+    name: "{{ packages }}"
+    state: latest
+
+- name: Copy Xwrapper config
+  copy:
+    src: 'Xwrapper.config'
+    dest: '/etc/X11/'

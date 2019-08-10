@@ -1,0 +1,14 @@
+---
+packages:
+  - xorg-bdftopcf
+  - xorg-mkfontscale
+  - xorg-server
+  - xorg-xdpyinfo
+  - xorg-xinit
+  - xorg-xinput
+  - xorg-xkbutils
+  - xorg-xkill
+  - xorg-xprop
+  - xorg-xrandr
+  - xorg-xset
+  - xorg-xwininfo
