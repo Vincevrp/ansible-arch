@@ -19,3 +19,8 @@
   copy:
     src: nfs.conf
     dest: /etc/nfs.conf
+
+- name: Copy sudoers configuration for vagrant NFS
+  copy:
+    src: vagrant-nfs
+    dest: /etc/sudoers.d/vagrant-nfs
