@@ -1,3 +1,4 @@
 ---
 packages:
   - i3-gaps
+  - compton
