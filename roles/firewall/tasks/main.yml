@@ -1,0 +1,24 @@
+---
+- name: Copy iptables rules
+  copy:
+    src: iptables.rules
+    dest: /etc/iptables/iptables.rules
+  notify: restart iptables
+
+- name: Copy ip6tables rules
+  copy:
+    src: ip6tables.rules
+    dest: /etc/iptables/ip6tables.rules
+  notify: restart ip6tables
+
+- name: Start iptables and run on startup
+  service:
+    name: iptables
+    state: started
+    enabled: true
+
+- name: Start ip6tables and run on startup
+  service:
+    name: ip6tables
+    state: started
+    enabled: true
