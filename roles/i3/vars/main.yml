@@ -1,4 +1,4 @@
 ---
-packages:
+i3_packages:
   - i3-gaps
-  - compton
+  - picom

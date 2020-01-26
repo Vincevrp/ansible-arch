@@ -1,7 +1,7 @@
 ---
 - name: Install xorg packages
   pacman:
-    name: "{{ packages }}"
+    name: "{{ xorg_packages }}"
     state: latest
 
 - name: Copy Xwrapper config

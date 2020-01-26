@@ -1,7 +1,7 @@
 ---
 - name: Install libvirt packages
   pacman:
-    name: '{{ packages }}'
+    name: '{{ libvirt_packages }}'
     state: latest
 
 - name: "Add user {{ username }} to libvirt group"

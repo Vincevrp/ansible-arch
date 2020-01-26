@@ -1,5 +1,5 @@
 ---
-packages:
+xorg_packages:
   - xorg-bdftopcf
   - xorg-mkfontscale
   - xorg-server

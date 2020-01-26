@@ -1,5 +1,5 @@
 ---
 - name: Install i3wm
   pacman:
-    name: "{{ packages }}"
+    name: "{{ i3_packages }}"
     state: latest
