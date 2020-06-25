@@ -12,7 +12,6 @@
 - name: Install packages (aur)
   aur:
     name: "{{ aur_packages }}"
-    skip_installed: true
 
 - name: Install vim LSP (pacman)
   pacman:
