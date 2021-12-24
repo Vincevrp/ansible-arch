@@ -3,5 +3,5 @@ libvirt_packages:
   - libvirt
   - qemu
   - dnsmasq
-  - ebtables
+  - iptables-nft
   - nfs-utils
