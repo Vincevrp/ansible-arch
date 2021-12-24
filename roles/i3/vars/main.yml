@@ -1,4 +1,7 @@
 ---
 i3_packages:
   - i3-gaps
+  - xsecurelock
   - picom
+  - rofi
+  - rofi-calc
