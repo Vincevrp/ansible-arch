@@ -24,3 +24,11 @@
   copy:
     src: vagrant-nfs
     dest: /etc/sudoers.d/vagrant-nfs
+
+- name: Create /etc/resolv.conf symlink for systemd-resolved
+  ansible.builtin.file:
+    src: /run/systemd/resolve/stub-resolv.conf
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    state: link
